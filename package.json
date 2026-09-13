@@ -1,0 +1,110 @@
+{
+  "name": "unxr",
+  "version": "0.1.0",
+  "description": "UNxR — a rhythm tube shooter for js13kGames 2026",
+  "author": "glebv",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.34.5",
+  "sizeBudget": {
+    "bytes": 13312,
+    "zip": "dist/index.zip"
+  },
+  "screenReport": {
+    "screens": {
+      "Attract": [
+        "enterAttract",
+        "updateAttract",
+        "renderAttract"
+      ],
+      "Select": [
+        "enterStartLevelSelect",
+        "updateStartLevelSelect",
+        "renderStartLevelSelect"
+      ],
+      "Game": [
+        "startGame",
+        "updateGameScreen",
+        "runPlaySimulation",
+        "advanceWave",
+        "addScore",
+        "togglePause",
+        "renderHud",
+        "renderStageOverlay",
+        "drawArena",
+        "drawSpikes",
+        "src/index.ts#drawGlyph",
+        "drawShots",
+        "drawShip",
+        "drawRhythm",
+        "rimPoint",
+        "rimPointRaw",
+        "updateTubeScale",
+        "starOffset",
+        "initStars",
+        "stopStars",
+        "updateStars",
+        "renderStars",
+        "drawEnemy",
+        "burst",
+        "updateFrags",
+        "renderFrags",
+        "updateSwarm",
+        "renderSwarm"
+      ],
+      "GameOver": [
+        "updateGameOver",
+        "renderGameOver"
+      ],
+      "Initials": [
+        "updateInitials",
+        "renderInitials",
+        "iniChar"
+      ]
+    }
+  },
+  "scripts": {
+    "dev": "vite --open --host",
+    "build": "tsc --noEmit && vite build --mode debug",
+    "build:release": "tsc --noEmit && vite build --mode release && node scripts/check-size.mjs",
+    "preview": "vite preview --open --host",
+    "test": "node --experimental-strip-types tests/unit.mjs",
+    "test:e2e": "node tests/e2e.mjs",
+    "report:screens": "node scripts/screen-report.mjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/dat.gui": "^0.7.13",
+    "dat.gui": "^0.7.9",
+    "eslint": "^10.8.1",
+    "globals": "^17.11.0",
+    "husky": "^9.1.7",
+    "js13k-vite-plugins": "^1.0.4",
+    "lint-staged": "^17.3.0",
+    "playwright-core": "^1.49.1",
+    "prettier": "^3.9.6",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "terser": "^5.50.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.67.0",
+    "vite": "^8.2.1"
+  },
+  "lint-staged": {
+    "*.{js,mjs,ts}": "eslint --fix",
+    "*": "prettier --write -u"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "ect-bin",
+      "advzip-bin",
+      "esbuild"
+    ]
+  }
+}
