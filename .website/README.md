@@ -1,4 +1,5 @@
 ---
+video: https://youtu.be/bTsYODs7f2w
 # See github.com/js13kGames/hello-world for supported frontmatter
 ---
 
